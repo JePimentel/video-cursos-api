@@ -5,12 +5,14 @@ const Categories = require('./categoriesModel')
 const Videos = require('./videosModel')
 
 const initModels = () => {
-  Users.belongsToMany(Courses, { through: UsersCourses })
-  Courses.belongsToMany(Users, { through: UsersCourses })
-  Categories.hasMany(Courses, { foreignKey: 'course_id' })
-  Courses.belongsTo(Categories, { foreignKey: 'course_id' })
-  Videos.hasMany(Courses, { foreignKey: 'course_id' })
-  Courses.belongsTo(Videos, { foreignKey: 'course_id' })
+  Users.belongsToMany(Courses,      { through: UsersCourses }  )
+  Courses.belongsToMany(Users,      { through: UsersCourses }  )
+  
+  Courses.hasMany(Categories)
+  Categories.belongsTo(Courses)
+
+  Courses.hasMany(Videos)
+  Videos.belongsTo(Courses)
 }
 
 module.exports = initModels

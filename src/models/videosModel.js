@@ -15,14 +15,6 @@ const Videos = db.define('Videos', {
   url: {
     type: DataTypes.STRING,
     allowNull: false
-  },
-  courseId: {
-    type: DataTypes.INTEGER,
-    field: "course_id",
-    references: {
-      model: Courses,
-      key: "id"
-    }
   }
 }, {
   timestamps: false

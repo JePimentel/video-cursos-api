@@ -12,9 +12,9 @@ const Categories = db.define('Categories', {
     type: DataTypes.STRING(50),
     allowNull: false,
   },
-  courseId: {
+  CourseId: {
     type: DataTypes.INTEGER,
-    field: "course_id",
+    field: "courseId",
     references: {
       model: Courses,
       key: "id"

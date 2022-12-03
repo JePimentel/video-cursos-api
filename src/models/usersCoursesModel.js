@@ -4,7 +4,7 @@ const Users = require('./usersModel')
 const Courses = require('./coursesModel')
 
 const UsersCourses = db.define('users_courses', {
-  userId: {
+  UserId: {
     type: DataTypes.INTEGER,
     field: "user_id",
     references: {
@@ -12,7 +12,7 @@ const UsersCourses = db.define('users_courses', {
       key: "id"
     }
   },
-  courseId: {
+  CourseId: {
     type: DataTypes.INTEGER,
     field: "course_id",
     references: {
